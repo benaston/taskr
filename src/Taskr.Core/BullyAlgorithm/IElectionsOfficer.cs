@@ -4,6 +4,6 @@ namespace Taskr.Core.BullyAlgorithm
 {
     public interface IElectionsOfficer
     {
-        ElectionResult HoldElection(ICandidate localCandidate, IList<ICandidate> allCandidates);
+        void HoldElection(ICandidate localCandidate, IList<ICandidate> allCandidates);
     }
 }

@@ -11,7 +11,7 @@ namespace Taskr.Core.BullyAlgorithm
         bool IsLocal { get; set; }
 
         /// <summary>
-        /// These identify the "bigger bullies" than this candidate.
+        /// The collection of "bigger bullies" than this candidate.
         /// </summary>
         IEnumerable<int> MoreAuthoritativeCandidateIds { get; set; }
     }

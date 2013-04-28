@@ -1,16 +1,15 @@
 using System;
 using System.Text;
-using Taskr.Core.BullyAlgorithm;
 using Taskr.Core.Infrastructure;
 using ZeroMQ;
 
-namespace Taskr.Core
+namespace Taskr.Core.BullyAlgorithm
 {
-    public class ExampleElectionMessageServer
+    public class ElectionNotificationReception
     {
         private const string ClusterMemberEndpointConfigurationKey = "ClusterMemberEndpoint";
 
-        public static void StartMessageServer()
+        public static void Run()
         {
             using (ZmqContext context = ZmqContext.Create())
             using (ZmqSocket server = context.CreateSocket(SocketType.REP))
@@ -20,12 +19,12 @@ namespace Taskr.Core
 
                 for (;;)
                 {
-                    string message = server.Receive(Encoding.Unicode);
+                    var message = server.Receive(Encoding.Unicode);
                     Console.WriteLine("Is Leader: {0}", CoordinatorElectionScheduler.IsCoordinatorProcess);
 
                     if (message == CoordinatorElectionScheduler.ElectionMessage)
                     {
-                        server.Send(CoordinatorElectionScheduler.ElectionConclusiveMessage, Encoding.Unicode);
+                        server.Send(CoordinatorElectionScheduler.OnlineMessage, Encoding.Unicode);
                     }
                 }
             }

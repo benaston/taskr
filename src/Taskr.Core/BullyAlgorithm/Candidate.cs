@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace Taskr.Core.BullyAlgorithm
 {
     /// <summary>
-    /// Models a candidate in an election.
+    /// Models a candidate in the election for the coordinator.
     /// </summary>
     public class Candidate : ICandidate
     {

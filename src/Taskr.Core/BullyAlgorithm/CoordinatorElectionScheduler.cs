@@ -11,7 +11,7 @@ namespace Taskr.Core.BullyAlgorithm
     public class CoordinatorElectionScheduler
     {
         public const string ElectionMessage = "ELECTION";
-        public const string ElectionConclusiveMessage = "CONCLUSIVE";
+        public const string OnlineMessage = "ONLINE";
         public const double ElectionMessageReceiveTimeoutSeconds = .5;
         public const double ElectionMessageReceiveSocketLingerSeconds = 1;
         public const double ElectionIntervalSeconds = 2.5;
