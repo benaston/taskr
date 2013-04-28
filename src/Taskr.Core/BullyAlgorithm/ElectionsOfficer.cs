@@ -34,6 +34,8 @@ namespace Taskr.Core.BullyAlgorithm
 
         public static CandidateStatus SendElectionNotification(ICandidate candidate)
         {
+            if (candidate.IsLocal) { throw new Exception("candidate must not be local (i.e. associated with another process)"); }
+
             using (ZmqContext context = ZmqContext.Create())
             using (ZmqSocket client = context.CreateSocket(SocketType.REQ))
             {
