@@ -21,7 +21,7 @@ namespace Taskr.Core.BullyAlgorithm
 
             foreach (var id in localCandidate.MoreAuthoritativeCandidateIds.OrderByDescending(i => i))
             {
-                if (SendElectionNotification(allCandidates[id]) == CandidateStatus.Online)
+                if (SendElectionNotification(allCandidates[id]) == CandidateStatus.Ok)
                 {
                     CoordinatorElectionScheduler.IsCoordinatorProcess = false;
 
@@ -46,7 +46,7 @@ namespace Taskr.Core.BullyAlgorithm
                 client.Linger = TimeSpan.FromSeconds(CoordinatorElectionScheduler.ElectionMessageReceiveSocketLingerSeconds); //required
                 client.Close(); //required
 
-                return reply == CoordinatorElectionScheduler.OnlineMessage ? CandidateStatus.Online : CandidateStatus.Offline;
+                return reply == CoordinatorElectionScheduler.OkMessage ? CandidateStatus.Ok : CandidateStatus.NotOk;
             }
         }
     }

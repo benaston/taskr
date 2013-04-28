@@ -24,7 +24,7 @@ namespace Taskr.Core.BullyAlgorithm
 
                     if (message == CoordinatorElectionScheduler.ElectionMessage)
                     {
-                        server.Send(CoordinatorElectionScheduler.OnlineMessage, Encoding.Unicode);
+                        server.Send(CoordinatorElectionScheduler.OkMessage, Encoding.Unicode);
                     }
                 }
             }
