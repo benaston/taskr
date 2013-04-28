@@ -10,6 +10,6 @@ namespace Taskr.Core.BullyAlgorithm
 
         bool IsLocal { get; set; }
 
-        IEnumerable<int> AuthoritativeCandidateIds { get; set; }
+        IEnumerable<int> MoreAuthoritativeCandidateIds { get; set; }
     }
 }

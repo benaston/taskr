@@ -10,9 +10,8 @@ namespace Taskr.Core.Tests.Slow.Process1
 
         public static void Main(string[] args)
         {
-            var t1 = new Thread(Foo.StartMessageServer);
-            var t2 =
-                new Thread(new LeadershipElectionScheduler(new CandidateFactory(new AppSettings()).Create(), ElectionLock).Run);
+            var t1 = new Thread(TestHelper.StartMessageServer);
+            var t2 = new Thread(new LeadershipElectionScheduler(new CandidateFactory(new AppSettings()).Create(), ElectionLock).Run);
 
             t1.Start();
             t2.Start();

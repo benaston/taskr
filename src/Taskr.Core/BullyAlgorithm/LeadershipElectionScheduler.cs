@@ -7,12 +7,18 @@ namespace Taskr.Core.BullyAlgorithm
 {
     public class LeadershipElectionScheduler
     {
+        public const string ElectionMessage = "ELECTION";
+        public const string ElectionConclusiveMessage = "CONCLUSIVE";
+        public const double ElectionMessageReceiveTimeoutSeconds = 4;
+        public const double ElectionMessageReceiveSocketLingerSeconds = 1;
+        public const double ElectionIntervalSeconds = 5;
+
         public static bool IsLeaderProcess;
         public static Random RandomNumberGenerator = new Random();
+
         private readonly IList<ICandidate> _candidates;
         private readonly object _lockObject;
-        private readonly TimeSpan _electionInterval = TimeSpan.FromSeconds(5);
-        private ICandidate _thisCandidate;
+        private readonly ICandidate _thisCandidate;
 
         public LeadershipElectionScheduler(IList<ICandidate> candidates, object lockObject)
         {
@@ -29,10 +35,6 @@ namespace Taskr.Core.BullyAlgorithm
                 {
                     try
                     {
-//                        foreach (var i in thisCandidate.AuthoritativeCandidateIds)
-//                        {
-//                            _candidates[i].HoldElection(_candidates);
-//                        }
                         _thisCandidate.HoldElection(_candidates);
                     }
                     catch(Exception ex)
@@ -41,7 +43,7 @@ namespace Taskr.Core.BullyAlgorithm
                     }
                 }
 
-                Thread.Sleep(_electionInterval);
+                Thread.Sleep(TimeSpan.FromSeconds(ElectionIntervalSeconds));
             }
         }
     }

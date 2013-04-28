@@ -8,6 +8,9 @@ namespace Taskr.Core.BullyAlgorithm
     public class CandidateFactory
     {
         private readonly IAppSettings _appSettings;
+        private const string ClusterMemberIdConfigurationKey = "ClusterMemberId";
+        private const string ClusterMembersConfigurationKey = "ClusterMembers";
+        private const char ClusterMemberDelimiter = ',';
 
         public CandidateFactory(IAppSettings appSettings)
         {
@@ -16,8 +19,8 @@ namespace Taskr.Core.BullyAlgorithm
 
         public IList<ICandidate> Create()
         {
-            var candidateUris = _appSettings["ClusterMembers"].Split(',');
-            var thisCandidateId = int.Parse(_appSettings["ClusterMemberId"]);
+            var candidateUris = _appSettings[ClusterMembersConfigurationKey].Split(ClusterMemberDelimiter);
+            var thisCandidateId = int.Parse(_appSettings[ClusterMemberIdConfigurationKey]);
             var candidates = new List<ICandidate>();
 
             var index = 0;
@@ -26,7 +29,7 @@ namespace Taskr.Core.BullyAlgorithm
                 candidates.Add(new Candidate(index,
                                              uri,
                                              index == thisCandidateId,
-                                             GetAuthoritativeCandidateIds(index, candidateUris)
+                                             GetMoreAuthoritativeCandidateIds(index, candidateUris)
                                              .Where(i => i >= 0)));
                 index++;
             }
@@ -34,7 +37,7 @@ namespace Taskr.Core.BullyAlgorithm
             return candidates;
         }
 
-        public IEnumerable<int> GetAuthoritativeCandidateIds(int index, IEnumerable<string> candidateUris)
+        private IEnumerable<int> GetMoreAuthoritativeCandidateIds(int index, IEnumerable<string> candidateUris)
         {
             return candidateUris.Select(n => {
                 var i = Array.IndexOf<string>(candidateUris.ToArray(), n);

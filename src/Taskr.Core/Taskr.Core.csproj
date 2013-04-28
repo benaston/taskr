@@ -48,9 +48,9 @@
     <Compile Include="BullyAlgorithm\CandidateFactory.cs" />
     <Compile Include="BullyAlgorithm\ElectionResult.cs" />
     <Compile Include="BullyAlgorithm\ICandidate.cs" />
-    <Compile Include="BullyAlgorithm\IElectionCandidateNodeExtensions.cs" />
+    <Compile Include="BullyAlgorithm\ICandidateExtensions.cs" />
     <Compile Include="BullyAlgorithm\LeadershipElectionScheduler.cs" />
-    <Compile Include="Foo.cs" />
+    <Compile Include="TestHelper.cs" />
     <Compile Include="Infrastructure\AppSettings.cs" />
     <Compile Include="Infrastructure\Calendar.cs" />
     <Compile Include="Infrastructure\IAppSettings.cs" />
