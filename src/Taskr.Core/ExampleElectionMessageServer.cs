@@ -1,13 +1,12 @@
 using System;
 using System.Text;
-using System.Threading;
 using Taskr.Core.BullyAlgorithm;
 using Taskr.Core.Infrastructure;
 using ZeroMQ;
 
 namespace Taskr.Core
 {
-    public class TestHelper
+    public class ExampleElectionMessageServer
     {
         private const string ClusterMemberEndpointConfigurationKey = "ClusterMemberEndpoint";
 
@@ -23,8 +22,6 @@ namespace Taskr.Core
                 {
                     string message = server.Receive(Encoding.Unicode);
                     Console.WriteLine("Is Leader: {0}", LeadershipElectionScheduler.IsLeaderProcess);
-
-                    Thread.Sleep(2000); //work simulation
 
                     if (message == LeadershipElectionScheduler.ElectionMessage)
                     {

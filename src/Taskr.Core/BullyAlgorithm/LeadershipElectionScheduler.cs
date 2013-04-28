@@ -9,9 +9,9 @@ namespace Taskr.Core.BullyAlgorithm
     {
         public const string ElectionMessage = "ELECTION";
         public const string ElectionConclusiveMessage = "CONCLUSIVE";
-        public const double ElectionMessageReceiveTimeoutSeconds = 4;
+        public const double ElectionMessageReceiveTimeoutSeconds = .5;
         public const double ElectionMessageReceiveSocketLingerSeconds = 1;
-        public const double ElectionIntervalSeconds = 5;
+        public const double ElectionIntervalSeconds = 2.5;
 
         public static bool IsLeaderProcess;
         public static Random RandomNumberGenerator = new Random();

@@ -50,7 +50,7 @@
     <Compile Include="BullyAlgorithm\ICandidate.cs" />
     <Compile Include="BullyAlgorithm\ICandidateExtensions.cs" />
     <Compile Include="BullyAlgorithm\LeadershipElectionScheduler.cs" />
-    <Compile Include="TestHelper.cs" />
+    <Compile Include="ExampleElectionMessageServer.cs" />
     <Compile Include="Infrastructure\AppSettings.cs" />
     <Compile Include="Infrastructure\Calendar.cs" />
     <Compile Include="Infrastructure\IAppSettings.cs" />
