@@ -5,6 +5,9 @@ using ZeroMQ;
 
 namespace Taskr.Core.BullyAlgorithm
 {
+    /// <summary>
+    /// Responsible for dealing with in-bound election notifications.
+    /// </summary>
     public class ElectionNotificationReception
     {
         private const string ClusterMemberEndpointConfigurationKey = "ClusterMemberEndpoint";
@@ -20,7 +23,7 @@ namespace Taskr.Core.BullyAlgorithm
                 for (;;)
                 {
                     var message = server.Receive(Encoding.Unicode);
-                    Console.WriteLine("Is Leader: {0}", CoordinatorElectionScheduler.IsCoordinatorProcess);
+                    Console.WriteLine("Is Coordinator: {0}", CoordinatorElectionScheduler.IsCoordinatorProcess);
 
                     if (message == CoordinatorElectionScheduler.ElectionMessage)
                     {

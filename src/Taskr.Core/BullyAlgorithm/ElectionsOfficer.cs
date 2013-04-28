@@ -6,6 +6,10 @@ using ZeroMQ;
 
 namespace Taskr.Core.BullyAlgorithm
 {
+    /// <summary>
+    /// NOTE: that communication of the elected 
+    /// coordinator is not currently implemented.
+    /// </summary>
     public class ElectionsOfficer : IElectionsOfficer
     {
         public  void HoldElection(ICandidate localCandidate, IList<ICandidate> allCandidates)
