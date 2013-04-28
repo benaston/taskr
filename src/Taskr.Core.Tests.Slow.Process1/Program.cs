@@ -11,7 +11,7 @@ namespace Taskr.Core.Tests.Slow.Process1
         public static void Main(string[] args)
         {
             var t1 = new Thread(ElectionNotificationReception.Run);
-            var t2 = new Thread(new CoordinatorElectionScheduler(new ElectionsOfficerInstrumented(new ElectionsOfficer()), new CandidateFactory(new AppSettings()).Create(), ElectionLock).Run);
+            var t2 = new Thread(new CoordinatorElectionScheduler(new ElectionsOfficerInstrumented(), new CandidateFactory(new AppSettings()).Create(), ElectionLock).Run);
 
             t1.Start();
             t2.Start();

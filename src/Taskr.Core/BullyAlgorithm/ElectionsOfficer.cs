@@ -12,7 +12,7 @@ namespace Taskr.Core.BullyAlgorithm
     /// </summary>
     public class ElectionsOfficer : IElectionsOfficer
     {
-        public  void HoldElection(ICandidate localCandidate, IList<ICandidate> allCandidates)
+        public virtual void HoldElection(ICandidate localCandidate, IList<ICandidate> allCandidates)
         {
             if (!localCandidate.IsLocal) { throw new Exception("localCandidate must be local (i.e. associated with the current process)"); }
 
@@ -36,7 +36,7 @@ namespace Taskr.Core.BullyAlgorithm
             CoordinatorElectionScheduler.IsCoordinatorProcess = true;
         }
 
-        public static CandidateStatus SendElectionNotification(ICandidate candidate)
+        public virtual CandidateStatus SendElectionNotification(ICandidate candidate)
         {
             if (candidate.IsLocal) { throw new Exception("candidate must not be local (i.e. associated with another process)"); }
 
