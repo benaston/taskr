@@ -15,17 +15,17 @@ namespace Taskr.Core
             using (ZmqContext context = ZmqContext.Create())
             using (ZmqSocket server = context.CreateSocket(SocketType.REP))
             {
-                server.ReceiveTimeout = TimeSpan.FromSeconds(LeadershipElectionScheduler.ElectionMessageReceiveTimeoutSeconds);
+                server.ReceiveTimeout = TimeSpan.FromSeconds(CoordinatorElectionScheduler.ElectionMessageReceiveTimeoutSeconds);
                 server.Bind(new AppSettings()[ClusterMemberEndpointConfigurationKey]);
 
                 for (;;)
                 {
                     string message = server.Receive(Encoding.Unicode);
-                    Console.WriteLine("Is Leader: {0}", LeadershipElectionScheduler.IsLeaderProcess);
+                    Console.WriteLine("Is Leader: {0}", CoordinatorElectionScheduler.IsCoordinatorProcess);
 
-                    if (message == LeadershipElectionScheduler.ElectionMessage)
+                    if (message == CoordinatorElectionScheduler.ElectionMessage)
                     {
-                        server.Send(LeadershipElectionScheduler.ElectionConclusiveMessage, Encoding.Unicode);
+                        server.Send(CoordinatorElectionScheduler.ElectionConclusiveMessage, Encoding.Unicode);
                     }
                 }
             }

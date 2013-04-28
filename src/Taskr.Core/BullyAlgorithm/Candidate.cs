@@ -22,8 +22,6 @@ namespace Taskr.Core.BullyAlgorithm
 
         public string Uri { get; set; }
 
-        public bool IsLeader { get; set; }
-
         public bool IsLocal { get; set; }
 
         public IEnumerable<int> MoreAuthoritativeCandidateIds { get; set; }

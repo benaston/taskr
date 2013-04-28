@@ -5,7 +5,10 @@ using System.Threading;
 
 namespace Taskr.Core.BullyAlgorithm
 {
-    public class LeadershipElectionScheduler
+    /// <summary>
+    /// Schedules the election of the "coordinator".
+    /// </summary>
+    public class CoordinatorElectionScheduler
     {
         public const string ElectionMessage = "ELECTION";
         public const string ElectionConclusiveMessage = "CONCLUSIVE";
@@ -13,18 +16,22 @@ namespace Taskr.Core.BullyAlgorithm
         public const double ElectionMessageReceiveSocketLingerSeconds = 1;
         public const double ElectionIntervalSeconds = 2.5;
 
-        public static bool IsLeaderProcess;
+        public static bool IsCoordinatorProcess;
         public static Random RandomNumberGenerator = new Random();
 
+        private readonly IElectionsOfficer _electionsOfficer;
         private readonly IList<ICandidate> _candidates;
         private readonly object _lockObject;
-        private readonly ICandidate _thisCandidate;
+        private readonly ICandidate _localCandidate;
 
-        public LeadershipElectionScheduler(IList<ICandidate> candidates, object lockObject)
+        public CoordinatorElectionScheduler(IElectionsOfficer electionsOfficer, 
+                                            IList<ICandidate> candidates, 
+                                            object lockObject)
         {
+            _electionsOfficer = electionsOfficer;
             _candidates = candidates;
             _lockObject = lockObject;
-            _thisCandidate = _candidates.First(c => c.IsLocal);
+            _localCandidate = _candidates.First(c => c.IsLocal);
         }
 
         public void Run()
@@ -35,7 +42,7 @@ namespace Taskr.Core.BullyAlgorithm
                 {
                     try
                     {
-                        _thisCandidate.HoldElection(_candidates);
+                        _electionsOfficer.HoldElection(_localCandidate, _candidates);
                     }
                     catch(Exception ex)
                     {
