@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A1A8A081-D1C8-4070-BB41-6C2AE94EE0A0}</ProjectGuid>
+    <ProjectGuid>{13B3CB7B-4247-4CCF-ADC1-3B1CAD8A060F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Taskr.Core</RootNamespace>
-    <AssemblyName>Taskr.Core</AssemblyName>
+    <RootNamespace>Taskr.Core.Tests.Fast</RootNamespace>
+    <AssemblyName>Taskr.Core.Tests.Fast</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -35,7 +35,6 @@
       <HintPath>..\..\lib\clrzmq\clrzmq.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,24 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BullyAlgorithm\Candidate.cs" />
-    <Compile Include="BullyAlgorithm\CandidateFactory.cs" />
-    <Compile Include="BullyAlgorithm\ElectionResult.cs" />
-    <Compile Include="BullyAlgorithm\ICandidate.cs" />
-    <Compile Include="BullyAlgorithm\IElectionCandidateNodeExtensions.cs" />
-    <Compile Include="BullyAlgorithm\LeadershipElectionScheduler.cs" />
-    <Compile Include="Foo.cs" />
-    <Compile Include="Infrastructure\AppSettings.cs" />
-    <Compile Include="Infrastructure\Calendar.cs" />
-    <Compile Include="Infrastructure\IAppSettings.cs" />
-    <Compile Include="Infrastructure\ICalendar.cs" />
-    <Compile Include="Infrastructure\IClock.cs" />
+    <Compile Include="LeaderElectorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="libzmq.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <ProjectReference Include="..\Taskr.Core\Taskr.Core.csproj">
+      <Project>{A1A8A081-D1C8-4070-BB41-6C2AE94EE0A0}</Project>
+      <Name>Taskr.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
