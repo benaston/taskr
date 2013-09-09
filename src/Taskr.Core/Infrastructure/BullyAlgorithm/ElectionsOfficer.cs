@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using ZeroMQ;
 
-namespace Taskr.Core.BullyAlgorithm
+namespace Taskr.Core.Infrastructure.BullyAlgorithm
 {
     /// <summary>
     /// NOTE: that communication of the elected 

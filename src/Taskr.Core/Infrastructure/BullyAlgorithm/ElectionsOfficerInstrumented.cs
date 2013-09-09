@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Taskr.Core.BullyAlgorithm
+namespace Taskr.Core.Infrastructure.BullyAlgorithm
 {
     public class ElectionsOfficerInstrumented : ElectionsOfficer
     {

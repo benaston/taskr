@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
-namespace Taskr.Core.BullyAlgorithm
+namespace Taskr.Core.Infrastructure.BullyAlgorithm
 {
     /// <summary>
     /// Schedules the election of the "coordinator".

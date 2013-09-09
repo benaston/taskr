@@ -44,21 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BullyAlgorithm\Candidate.cs" />
-    <Compile Include="BullyAlgorithm\CandidateFactory.cs" />
-    <Compile Include="BullyAlgorithm\CandidateStatus.cs" />
-    <Compile Include="BullyAlgorithm\ElectionsOfficer.cs" />
-    <Compile Include="BullyAlgorithm\ElectionsOfficerInstrumented.cs" />
-    <Compile Include="BullyAlgorithm\ElectionNotificationReception.cs" />
-    <Compile Include="BullyAlgorithm\ICandidate.cs" />
-    <Compile Include="BullyAlgorithm\CoordinatorElectionScheduler.cs" />
-    <Compile Include="BullyAlgorithm\IElectionsOfficer.cs" />
+    <Compile Include="ITask.cs" />
     <Compile Include="Infrastructure\AppSettings.cs" />
+    <Compile Include="Infrastructure\BullyAlgorithm\Candidate.cs" />
+    <Compile Include="Infrastructure\BullyAlgorithm\CandidateFactory.cs" />
+    <Compile Include="Infrastructure\BullyAlgorithm\CandidateStatus.cs" />
+    <Compile Include="Infrastructure\BullyAlgorithm\CoordinatorElectionScheduler.cs" />
+    <Compile Include="Infrastructure\BullyAlgorithm\ElectionNotificationReception.cs" />
+    <Compile Include="Infrastructure\BullyAlgorithm\ElectionsOfficer.cs" />
+    <Compile Include="Infrastructure\BullyAlgorithm\ElectionsOfficerInstrumented.cs" />
+    <Compile Include="Infrastructure\BullyAlgorithm\ICandidate.cs" />
+    <Compile Include="Infrastructure\BullyAlgorithm\IElectionsOfficer.cs" />
     <Compile Include="Infrastructure\Calendar.cs" />
     <Compile Include="Infrastructure\IAppSettings.cs" />
     <Compile Include="Infrastructure\ICalendar.cs" />
     <Compile Include="Infrastructure\IClock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskRunner.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="libzmq.dll">

@@ -1,9 +1,8 @@
 using System;
 using System.Text;
-using Taskr.Core.Infrastructure;
 using ZeroMQ;
 
-namespace Taskr.Core.BullyAlgorithm
+namespace Taskr.Core.Infrastructure.BullyAlgorithm
 {
     /// <summary>
     /// Responsible for dealing with in-bound election notifications.

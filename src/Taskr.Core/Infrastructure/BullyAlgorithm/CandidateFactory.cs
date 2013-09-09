@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Taskr.Core.Infrastructure;
 
-namespace Taskr.Core.BullyAlgorithm
+namespace Taskr.Core.Infrastructure.BullyAlgorithm
 {
     public class CandidateFactory
     {

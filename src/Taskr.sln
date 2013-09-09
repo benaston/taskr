@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taskr.Core.Tests.Slow.Proce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taskr.Core.Tests.Slow", "Taskr.Core.Tests.Slow\Taskr.Core.Tests.Slow.csproj", "{66942CAF-3566-45C0-B76F-204AECB8A6C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Editorial.Core", "..\..\dnr\Src\Editorial.Core\Editorial.Core.csproj", "{23E07B62-3F3B-485C-8E2C-55DDEF95D61E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,16 @@ Global
 		{66942CAF-3566-45C0-B76F-204AECB8A6C3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{66942CAF-3566-45C0-B76F-204AECB8A6C3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{66942CAF-3566-45C0-B76F-204AECB8A6C3}.Release|x86.ActiveCfg = Release|Any CPU
+		{23E07B62-3F3B-485C-8E2C-55DDEF95D61E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23E07B62-3F3B-485C-8E2C-55DDEF95D61E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23E07B62-3F3B-485C-8E2C-55DDEF95D61E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{23E07B62-3F3B-485C-8E2C-55DDEF95D61E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{23E07B62-3F3B-485C-8E2C-55DDEF95D61E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{23E07B62-3F3B-485C-8E2C-55DDEF95D61E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23E07B62-3F3B-485C-8E2C-55DDEF95D61E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23E07B62-3F3B-485C-8E2C-55DDEF95D61E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{23E07B62-3F3B-485C-8E2C-55DDEF95D61E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{23E07B62-3F3B-485C-8E2C-55DDEF95D61E}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

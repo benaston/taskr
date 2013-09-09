@@ -1,4 +1,4 @@
-namespace Taskr.Core.BullyAlgorithm
+namespace Taskr.Core.Infrastructure.BullyAlgorithm
 {
     public enum CandidateStatus
     {

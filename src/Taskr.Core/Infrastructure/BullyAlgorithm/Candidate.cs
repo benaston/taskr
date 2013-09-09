@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Taskr.Core.BullyAlgorithm
+namespace Taskr.Core.Infrastructure.BullyAlgorithm
 {
     /// <summary>
     /// Models a candidate in the election for the coordinator.

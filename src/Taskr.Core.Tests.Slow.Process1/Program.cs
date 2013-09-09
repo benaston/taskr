@@ -1,6 +1,6 @@
 ﻿using System.Threading;
-using Taskr.Core.BullyAlgorithm;
 using Taskr.Core.Infrastructure;
+using Taskr.Core.Infrastructure.BullyAlgorithm;
 
 namespace Taskr.Core.Tests.Slow.Process1
 {
